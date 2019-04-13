@@ -1,0 +1,7 @@
+net/stefanodellafiore/ifttt/api/TriggersApi.class
+net/stefanodellafiore/ifttt/model/CrdsvcInlineResponse200Data.class
+net/stefanodellafiore/ifttt/service/CardService.class
+net/stefanodellafiore/ifttt/model/CrdsvcInlineResponse200.class
+net/stefanodellafiore/ifttt/model/CrdsvcInlineResponse2001Data.class
+net/stefanodellafiore/ifttt/api/TriggersApiController.class
+net/stefanodellafiore/ifttt/model/CrdsvcInlineResponse2001.class
