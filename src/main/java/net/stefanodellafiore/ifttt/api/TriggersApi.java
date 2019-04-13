@@ -5,19 +5,25 @@
  */
 package net.stefanodellafiore.ifttt.api;
 
-import io.swagger.annotations.*;
 import net.stefanodellafiore.ifttt.model.CrdsvcErrors;
 import net.stefanodellafiore.ifttt.model.CrdsvcInlineResponse200;
 import net.stefanodellafiore.ifttt.model.CrdsvcInlineResponse2001;
+import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-04-13T19:12:43.742+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-04-13T20:36:06.995+02:00")
 
 @Api(value = "triggers", description = "the triggers API")
 public interface TriggersApi {
@@ -55,11 +61,6 @@ public interface TriggersApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<CrdsvcInlineResponse200> triggersAuthorizationRequestPerformedPost(
-            @ApiParam(value = "Trigger request for authorization_request_performed." ,required=true )  @Valid @RequestBody Object body,
-            @ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,
-            @ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,
-            @ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,
-            @ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID);
+    ResponseEntity<CrdsvcInlineResponse200> triggersAuthorizationRequestPerformedPost(@ApiParam(value = "Trigger request for authorization_request_performed." ,required=true )  @Valid @RequestBody object body,@ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,@ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,@ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,@ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID);
 
 }
