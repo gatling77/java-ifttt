@@ -50,7 +50,12 @@ public class TriggersApiController implements TriggersApi {
         return new ResponseEntity<CrdsvcInlineResponse2001>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<CrdsvcInlineResponse200> triggersAuthorizationRequestPerformedPost(@ApiParam(value = "Trigger request for authorization_request_performed." ,required=true )  @Valid @RequestBody Object body,@ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,@ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,@ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,@ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID) {
+    public ResponseEntity<CrdsvcInlineResponse200> triggersAuthorizationRequestPerformedPost(
+            @ApiParam(value = "Trigger request for authorization_request_performed." ,required=true )  @Valid @RequestBody Object body,
+            @ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,
+            @ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,
+            @ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,
+            @ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID) {
         if (accept != null && accept.contains("application/json")) {
             try {
                 return new ResponseEntity<CrdsvcInlineResponse200>(objectMapper.readValue("{  \"data\" : [ {    \"meta\" : {      \"id\" : \"id\",      \"timestamp\" : 0    },    \"created_at\" : { },    \"card\" : { }  }, {    \"meta\" : {      \"id\" : \"id\",      \"timestamp\" : 0    },    \"created_at\" : { },    \"card\" : { }  } ]}", CrdsvcInlineResponse200.class), HttpStatus.NOT_IMPLEMENTED);
