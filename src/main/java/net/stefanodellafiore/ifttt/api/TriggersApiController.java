@@ -37,14 +37,14 @@ public class TriggersApiController implements TriggersApi {
         this.cardService=cardService;
     }
 
-    public ResponseEntity<CrdsvcInlineResponse2001> triggersAuthorizationRequestPerformedFieldsCardOptionsPost(@ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,@ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,@ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,@ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID) {
+    public ResponseEntity<CrdsvcInlineResponse2001> triggersAuthorizationRequestPerformedFieldsCardOptionsPost(
+            @ApiParam(value = "" , allowableValues="application/json") @RequestHeader(value="Accept", required=false) String accept,
+            @ApiParam(value = "" , allowableValues="utf-8") @RequestHeader(value="Accept-Charset", required=false) String acceptCharset,
+            @ApiParam(value = "" , allowableValues="gzip, deflate") @RequestHeader(value="Accept-Encoding", required=false) List<String> acceptEncoding,
+            @ApiParam(value = "" ) @RequestHeader(value="X-Request-ID", required=false) String xRequestID) {
         if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<CrdsvcInlineResponse2001>(objectMapper.readValue("{  \"data\" : [ {    \"values\" : [ {      \"label\" : \"label\",      \"value\" : \"value\"    }, {      \"label\" : \"label\",      \"value\" : \"value\"    } ],    \"label\" : \"label\",    \"value\" : \"value\"  }, {    \"values\" : [ {      \"label\" : \"label\",      \"value\" : \"value\"    }, {      \"label\" : \"label\",      \"value\" : \"value\"    } ],    \"label\" : \"label\",    \"value\" : \"value\"  } ]}", CrdsvcInlineResponse2001.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<CrdsvcInlineResponse2001>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+                CrdsvcInlineResponse2001 data = cardService.getCardsForUser("");
+                return new ResponseEntity<CrdsvcInlineResponse2001>(data, HttpStatus.OK);
         }
 
         return new ResponseEntity<CrdsvcInlineResponse2001>(HttpStatus.NOT_IMPLEMENTED);
