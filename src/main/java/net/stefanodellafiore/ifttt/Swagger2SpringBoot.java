@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "net.stefanodellafiore.ifttt", "net.stefanodellafiore.ifttt.api" ,"net.stefanodellafiore.ifttt.service" ,"io.swagger.configuration"})
+@ComponentScan(basePackages = { "net.stefanodellafiore.ifttt", "net.stefanodellafiore.ifttt.api" , "io.swagger.configuration"})
 public class Swagger2SpringBoot implements CommandLineRunner {
 
     @Override

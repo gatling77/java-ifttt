@@ -1,21 +1,19 @@
 package net.stefanodellafiore.ifttt.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import net.stefanodellafiore.ifttt.model.CrdsvcIftttSource;
-import net.stefanodellafiore.ifttt.model.CrdsvcUser;
 import org.springframework.validation.annotation.Validated;
+
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
  * CrdsvcBaseTriggerRequest
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-04-13T19:12:43.742+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-04-13T20:36:06.995+02:00")
 
 public class CrdsvcBaseTriggerRequest   {
   @JsonProperty("trigger_identity")
